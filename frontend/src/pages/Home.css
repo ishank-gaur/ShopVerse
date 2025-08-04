@@ -1,0 +1,115 @@
+/* General container styling */
+.home-page {
+  padding-top: 120px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* Title */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #f5fbff; /* very light blue */
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  transform: translateZ(0); /* triggers GPU for smoother transform */
+  will-change: transform;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.25);
+  z-index: 10;
+}
+
+
+/* Image */
+.product-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Name & Price */
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card {
+  animation: slideInUp 0.6s ease-in-out both;
+}
+
+/* Optional: stagger animations */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+/* Continue for more cards */
+
+/* Quantity Controls */
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quantity-controls button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-controls span {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
