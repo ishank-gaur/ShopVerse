@@ -3,7 +3,7 @@ import { loginUser } from "../api/axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx"; // ✅ import context
 import "./Login.css";
-import loginIllustration from "../assets/login.svg";
+import loginIllustration from "../assets/Login.svg";
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
