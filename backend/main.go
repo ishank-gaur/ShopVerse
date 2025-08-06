@@ -6,8 +6,8 @@ import (
 	"ecommerce/models"
 	"github.com/joho/godotenv"
 	"github.com/gin-gonic/gin"
-	"log"
 	"github.com/gin-contrib/cors"
+	"log"
 	"os"
 )
 
