@@ -58,6 +58,7 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
+	log.Println("Starting server on port:", port)
 	if err := r.Run(":" + port); err != nil {
 		{
 			log.Fatal("Server error:", err)
