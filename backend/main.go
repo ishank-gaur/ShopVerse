@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"log"
 	"github.com/gin-contrib/cors"
+	"os"
 )
 
 func main() {
@@ -53,7 +54,13 @@ func main() {
 	r.GET("/items", handlers.ListItems)
 	r.GET("/users", handlers.ListUsers)
 
-	if err := r.Run(":8080"); err != nil {
-		log.Fatal("Server error:", err)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	if err := r.Run(":" + port); err != nil {
+		{
+			log.Fatal("Server error:", err)
+		}
 	}
 }
